@@ -7,3 +7,4 @@ sudo gpg --homedir /tmp --no-default-keyring --keyring /etc/apt/keyrings/scyllad
 sudo wget -O /etc/apt/sources.list.d/scylla.list http://downloads.scylladb.com/deb/debian/scylla-5.2.list
 sudo apt-get update 
 sudo apt-get install -y scylla
+sudo apt update
