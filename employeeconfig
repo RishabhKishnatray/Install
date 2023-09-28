@@ -1,9 +1,20 @@
 #!/bin/bash
 
-# Specify the path to your configuration file
-CONFIG_FILE="/home/ubuntu/employee/employee-api/config.yaml"
+echo "scylladb:
+  host: ["172.17.0.3:9042"]
+  username: scylladb
+  password: password
+  keyspace: employee_db
 
-# Prompt the user for input
+redis:
+  enabled: false
+  host: 172.17.0.4:6379
+  password: password
+  database: 0"
+
+CONFIG_FILE="/home/ubuntu/employee-api/config.yaml"
+
+# user for input
 read -p "Enter ScyllaDB host (e.g., 172.17.0.3:9042): " SCYLLA_HOST
 read -p "Enter ScyllaDB username: " SCYLLA_USERNAME
 read -s -p "Enter ScyllaDB password: " SCYLLA_PASSWORD
