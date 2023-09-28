@@ -1,10 +1,12 @@
 #!/bin/bash
 
-# Prompt the user for the new Cassandra host and port
+echo "{
+  "database": "cassandra://172.17.0.3:9042/employee_db?username=scylladb&password=password"
+}"
 read -p "Enter the new Cassandra host and port (e.g., 192.168.1.100:9042): " NEW_HOST_PORT
 
-# Specify the path to your JSON file
-JSON_FILE="/home/ubuntu/employee/employee-api/migration.json"
+
+JSON_FILE="/home/ubuntu/employee-api/migration.json"
 
 # Check if the JSON file exists
 if [ -f "$JSON_FILE" ]; then
