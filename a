@@ -1,0 +1,17 @@
+---
+jdkversion:
+  - openjdk-8-jre-headless
+scylla_repo: http://downloads.scylladb.com/deb/debian/scylla-5.2.list
+#scylla_gpg: "gpg --homedir /tmp --no-default-keyring --keyring /etc/apt/keyrings/scylladb.gpg \
+# --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys d0a112e067426ab2"
+scylla_gpg: "gpg --homedir /tmp --no-default-keyring --keyring /etc/apt/keyrings/scylladb.gpg --keyserver hkp://keyserver.ubuntu.com --recv-keys d0a112e067426ab2"
+
+#scylla_gpg: "gpg --homedir /tmp --no-default-keyring --keyring /etc/apt/keyrings/scylladb.gpg --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys d0a112e067426ab2"
+scylla_repo_dest: "/etc/apt/sources.list.d/scylla.list"
+templ:
+  - /etc/apt/keyrings
+  - /etc/scylla/cassandra
+templl:
+  - scylla.yml.j2
+
+gpg_key_needed: "{{ not ('d0a112e067426ab2' | keyring(path='/etc/apt/keyrings/scylladb.gpg')) }}"
