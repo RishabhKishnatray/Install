@@ -22,3 +22,9 @@ sudo ln -s /usr/bin/pip3 /usr/bin/pip
 sudo amazon-linux-extras install epel
 sudo yum install ansible
 sudo yum install ansible
+
+
+
+sudo yum install python-pip
+sudo yum install python3
+sudo python3 -m pip install boto3 botocore
